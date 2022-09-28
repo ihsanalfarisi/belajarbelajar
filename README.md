@@ -5,6 +5,36 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 3
+**Pertanyaan 1: Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor,
+@NoArgsConstructor, @Setter, @Getter, @Entity, @Table)**
+> - @AllArgsConstructor: Membuat constructor dengan skala public dengan atributnya yang terisi secara otomatis
+> - @NoArgsConstructor: Men-generate constructor tanpa membutuhkan parameter/tanpa mengisi atributnya
+> - @Setter: Melakukan inject untuk class tertentu menggunakan method setter
+> - @Getter: Melakukan inject untuk class tertentu menggunakan method getter
+> - @Entity: Menetapkan bahwa setiap class adalah sebuah entitas yang akan dipetakan ke dalam database dan setiap instance dari suatu entitas merepresentasikan baris pada tabel
+> - @Table: Memetakan detail dari tabel yang akan digunakan di dalam database
+
+
+**Pertanyaan 2: Pada class CourseDb, terdapat method findByCodeUsingQuery dan findByCode, apakah perbedaan kedua method tersebut?
+Jelaskan juga kegunaan @Query pada method findByCodeUsingQuery!**
+>
+
+**Pertanyaan 3: Jelaskan perbedaan kegunaan dari anotasi @JoinTable dan @JoinColumn**
+> - @JoinTable berguna untuk menetapkan nama tabel berdasarkan nama atribut dan menyimpan id dari tabel yang berbeda.
+> - @JoinColumn berguna untuk melakukan multiple join pada setiap kolom yang dituju dan menyimpan id dari tabel lain di kolom baru.
+
+
+**Pertanyaan 4: Pada class Pengajar, digunakan anotasi @JoinColumn pada atribut Course, apa kegunaan dari name,
+referencedColumnName, dan nullable dalam anotasi tersebut? dan apa perbedaan nullable dan penggunaan anotasi @NotNull**
+> - Di dalam @JoinColumn terdapat beberapa parameter: name untuk merujuk pada foreign key/kolom yang akan direferensikan ke primary key, referencedColumnName merujuk pada primary key/kolom yang direferensikan oleh foreign key, nullable merujuk apakan foreign key null atau tidak.
+> - @Nullable berguna untuk mengecek nullability pada setiap parameter sedangkan notnull mengecek nullability berdasarkan pemberian nilai true atau false.
+
+**Pertanyaan 5: Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER**
+> FetchType.LAZY akan mengambil data sesuai permintaan
+> FetchType.EAGER akan mengambil data secara bersamaan dengan fieldnya
+> CascadeType.ALL berguna untuk menerapkan seluruh method CASCADE yang juga akan memengaruhi perubahannya pada entity child.
+
 ## Tutorial 2
 **Pertanyaan 1: Cobalah untuk menambahkan sebuah Course dengan mengakses link berikut: 
 http://localhost:8080/course/add?code=APAP&nameCourse=APAP%20Tutorial2&description=2020%20Fasilkom&jumlahSks=3.
