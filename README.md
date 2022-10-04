@@ -5,6 +5,20 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 4
+**Pertanyaan 1: Jelaskan perbedaan th:include dan th:replace!**
+> th:include digunakan untuk menggantikan konten yang ada pada tags, contohnya
+> ```<object th:include="fragments/fragment :: css" th:remove="tag"></object>```
+> yang mana isi dari "fragment/fragment :: css" akan mengisi object. Sedangkan untuk th:replace, seluruh kode pada tags 
+> tersebut akan digantikan dengan yang di-replace.
+
+**Pertanyaan 2: Jelaskan apa fungsi dari th:object!**
+> th:object memiliki fungsi untuk mengikat object. Dengan begitu, kita dimungkinkan untuk melakukan pemanggilan terhadap
+> suatu objek dari file-file tertentu agar dapat diimplementasikan pada file lain.
+
+**Pertanyaan 3: Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?**
+> '*' digunakan untuk menunjuk suatu atribut dari suatu objek, sedangkan '$' digunakan untuk menunjuk objek itu sendiri.
+
 ## Tutorial 3
 **Pertanyaan 1: Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor,
 @NoArgsConstructor, @Setter, @Getter, @Entity, @Table)**

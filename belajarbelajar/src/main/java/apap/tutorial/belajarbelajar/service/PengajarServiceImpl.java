@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,6 +39,11 @@ public class PengajarServiceImpl implements PengajarService{
     @Override
     public void deletePengajar(PengajarModel pengajar) {
         pengajarDb.delete(pengajar);
+    }
+
+    @Override
+    public List<PengajarModel> getListPengajar() {
+        return pengajarDb.findAll();
     }
 
     public String checkUpdatePengajar(CourseModel course) {
