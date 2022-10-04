@@ -4,6 +4,7 @@ import apap.tutorial.belajarbelajar.model.CourseModel;
 import apap.tutorial.belajarbelajar.model.PengajarModel;
 import apap.tutorial.belajarbelajar.repository.CourseDb;
 import apap.tutorial.belajarbelajar.repository.PengajarDb;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -65,5 +66,11 @@ public class CourseServiceImpl implements CourseService{
             deleteCourse(course);
             return "delete-course";
         } else return "error-delete-course";
+    }
+
+    @Override
+    public boolean isClosed(LocalDateTime tanggalDimulai, LocalDateTime tanggalBerakhir) {
+        LocalDateTime now = LocalDateTime.now();
+        return now.isBefore(tanggalDimulai) || now.isAfter(tanggalBerakhir);
     }
 }

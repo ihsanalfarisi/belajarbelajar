@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Penyelenggara</title>
+  <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+  <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar('Penyelenggara')"></nav>
+<div class="container">
+    <div class="card-body">
+      <h2>Daftar Seluruh Penyelanggara</h2>
+      <br>
+      <div class="col">
+        <a class="btn btn-primary" th:href="@{/penyelenggara/add}">Tambah Penyelenggara</a>
+        <a class="btn btn-primary" th:href="@{/}">Beranda</a>
+      </div>
+      <br>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>No</th>
+          <th>No Penyelenggara</th>
+          <th>Nama Penyelenggara</th>
+          <th>Jenis Lembaga</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="penyelenggara, iterationStatus : ${listPenyelenggara}"
+            th:style="${iterationStatus.even} ? 'font-weight:bold;'">
+          <td th:text="${iterationStatus.count}"></td>
+          <td th:text="${penyelenggara.noPenyelenggara}"></td>
+          <td th:text="${penyelenggara.namaPenyelenggara}"></td>
+          <td>
+            <p th:if="${penyelenggara.jenisLembaga == 0}" th:text="'Non-Pendidikan'"></p>
+            <p th:if="${penyelenggara.jenisLembaga == 1}" th:text="'Pendidikan'"></p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  <a class="btn btn-primary" href="/">Home</a>
+  <br>
+</div>
+
+</body>
+
+</html>
