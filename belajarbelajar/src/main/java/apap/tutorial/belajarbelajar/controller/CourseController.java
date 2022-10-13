@@ -74,6 +74,7 @@ public class CourseController {
         model.addAttribute("listCourse", listCourse);
         return "viewall-course";
     }
+
     @GetMapping("/course/view")
     public String viewDetailCoursePage(@RequestParam(value = "code") String code, Model model) {
         CourseModel course = courseService.getCourseByCodeCourse(code);

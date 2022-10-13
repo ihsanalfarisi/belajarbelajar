@@ -55,13 +55,13 @@ public class PengajarController {
         return "update-pengajar";
     }
 
-//    @GetMapping("pengajar/delete/{noPengajar}")
-//    public String deletePengajar(@PathVariable(value = "noPengajar") Long noPengajar, Model model) {
-//        PengajarModel pengajar = pengajarService.getPengajarByNoPengajar(noPengajar);
-//        String res = pengajarService.checkDeletePengajar(pengajar.getCourse(), pengajar);
-//        model.addAttribute("pengajar", pengajar);
-//        return res;
-//    }
+    @GetMapping("pengajar/delete/{noPengajar}")
+    public String deletePengajar(@PathVariable(value = "noPengajar") Long noPengajar, Model model) {
+        PengajarModel pengajar = pengajarService.getPengajarByNoPengajar(noPengajar);
+        String res = pengajarService.checkDeletePengajar(pengajar.getCourse(), pengajar);
+        model.addAttribute("pengajar", pengajar);
+        return res;
+    }
 
     @PostMapping("/pengajar/delete")
     public String deletePengajarSubmit(@ModelAttribute CourseModel course, Model model) {

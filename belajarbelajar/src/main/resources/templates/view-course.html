@@ -52,7 +52,7 @@
                                 <td th:unless="${pengajar.isPengajarUniversitas}">Dosen Universitas</td>
 
                                 <td>
-                                    <a class="btn btn-sm btn-primary" th:href="@{/pengajar/update/} + ${course.code}">Ubah</a>
+                                    <a class="btn btn-sm btn-primary" th:href="@{/pengajar/update/} + ${pengajar.noPengajar}">Ubah</a>
                                 </td>
                                 <td>
                                     <input class="form-check-input" type="checkbox"
