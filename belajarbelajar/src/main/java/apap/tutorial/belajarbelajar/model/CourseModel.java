@@ -1,5 +1,6 @@
 package apap.tutorial.belajarbelajar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties(value={"listPenyelenggara"}, allowSetters = true)
 @Table(name = "course")
 public class CourseModel {
     @Id
@@ -53,9 +55,5 @@ public class CourseModel {
     @ManyToMany
     @JoinTable(name = "penyelenggara_course", joinColumns = @JoinColumn(name = "code"), inverseJoinColumns = @JoinColumn(name = "no_penyelenggara"))
     List<PenyelenggaraModel> listPenyelenggara;
-
-    public void addPengajar(PengajarModel pengajar) {
-        listPengajar.add(pengajar);
-    }
 }
 

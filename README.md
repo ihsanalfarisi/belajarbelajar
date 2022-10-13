@@ -5,6 +5,28 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 5
+**Pertanyaan 1: Apa itu Postman? Apa kegunaannya?**
+> **_Postman_** merupakan aplikasi komputer yang digunakan untuk melakukan pengujian API. Aplikasi ini relatif mudah digunakan
+> karena memiliki fitur yang sangat memudahkan seperti pengguna hanya perlu mengisi data yang diperlukan dan memilih
+> metode HTTP dan keran "Send" untuk melakukan pengiriman.
+
+**Pertanyaan 2: Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.**
+> - **_@JsonIgnoreProperties_** digunakan untuk mengabaikan properti-properti. Digunakan dengan cara memasukkan nama properti
+> ingin diabaikan pada parameternya. 
+> 
+>   **Contoh:** @JsonIgnoreProperties(value={"listPenyelenggara"}, allowSetters = true) digunakan untuk mengabaikan
+>   properti "listPenyelenggara".
+> - _**@JsonProperty**_ digunakan untuk mengganti nama dari suatu properti.
+
+**Pertanyaan 3: Apa kegunaan atribut WebClient?**
+> Atribut WebClient digunakan sebagai titik utama pengiriman dan penerimaan data dari web.
+
+**Pertanyaan 4: Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?**
+> - **_ResponseEntity_** berfungsi untuk merepresentasikan keseluruhan HTTP response (status, headers, dan body).
+> - **_BindingResult_** merupakan suatu objek Spring berfungsi untuk mengikat hasil dan memvalidasi data apabila terjadi
+> error/kesalahan.
+
 ## Tutorial 4
 **Pertanyaan 1: Jelaskan perbedaan th:include dan th:replace!**
 > th:include digunakan untuk menggantikan konten yang ada pada tags, contohnya
