@@ -5,14 +5,40 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 7
+**Pertanyaan 1: Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda 
+buat) konsep tersebut diimplementasi?**
+> Otentikasi merupakan suatu sistem yang berfungsi untuk memastikan siapa saja yang berhak menggunakan sistem informasi.
+> Mekanisme otentikasi ini diterapkan pada WebSecurityConfig pada package security yakni pengaturan akses login 
+> (penggunaan password). Sedangkan, otorisasi merupakan suatu sistem yang berfungsi untuk memberikan batasan kepada
+> pengguna. Mekanisme otorisasi pada kode ini merupakan pembatasan pengguna berdasarkan role-nya, akses listUser kepada
+> Admin dan tambahPenyelenggara kepada Manajer.
+
+**Pertanyaan 2: Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.**
+> BCryptPasswordEncoder merupakan tool yang dapat digunakan untuk men-encode password. Ketika menambahkan user, 
+> BCryptPasswordEncoder berperan untuk melakukan hashing pada password untuk disimpan ke database.
+
+**Pertanyaan 3: Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian?**
+> Proses pembuatan user, terkhusus pada penyimpanan password menurut saya akan lebih baik dengan menggunakan hashing
+> dibandingkan dengan encryption. Penggunaan encryption hanya mengubah password menjadi text yang sulit dibaca 
+> (ciphertext) dan hal tersebut dapat dengan mudah diubah kembali apabila terdapat encription key.
+
+**Pertanyaan 4: Jelaskan secara singkat apa itu UUID beserta penggunaannya!**
+> UUID merupakan tool yang digunakan untuk security. UUID adalah kode sebanyak 32 karakter yang diambil dari timestamp
+> dan alamat MAC komputer. Tujuan dari UUID sendiri adalah untuk menjamin id yang di-generate bersifat unik.
+
+**Pertanyaan 5: Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut?**
+> Class UserDetailsServiceImpl berfungsi untuk memberikan informasi terkait status otentikasi dan otorisasi user pada
+> class-class lain. Apabila class ini tidak terimplementasi, maka informasi terkait hal tersebut tidak dapat diberikan.
+
 ## Tutorial 6
 **Pertanyaan 1: Perhatikan apa yang terjadi pada file index.html pada branch feat/tutorial-6-advancedgit-1. 
 Apa yang terjadi setelah git cherry-pick dilakukan? Apakah kita bisa melakukan cherrypick tanpa harus melakukan commit?**
 > File index.html pada branch feat/tutorial-6-advancedgit-1 yang tadinya kosong sekarang terisi setelah dilakukan ```git
-> cherry-pick```, hal ini dapat terjadi karena ```git cherry-pick``` memungkinkan kita untuk mengambil kode dari branch lain. Pada
-> contoh ini, yang diambil merupakan baris kode dari branch tut-for-cherrypick ke feat/tutorial-6-advancedgit-1. Selain itu,
-> kita juga dapat melakukan cherrypick tanpa melakukan commit dengan menambahkan ```-n```.
-> ```git cherry-pick -n <commit-id>```.
+> cherry-pick```, hal ini dapat terjadi karena ```git cherry-pick``` memungkinkan kita untuk mengambil kode dari branch 
+> lain. Pada contoh ini, yang diambil merupakan baris kode dari branch tut-for-cherrypick ke 
+> feat/tutorial-6-advancedgit-1. Selain itu, kita juga dapat melakukan cherrypick tanpa melakukan commit dengan 
+> menambahkan ```-n```. ```git cherry-pick -n <commit-id>```.
 
 **Pertanyaan 2: Conflict terjadi karena ...**
 > Konflik terjadi karena terdapat perbedaan pada baris 6 file index.html. Konflik muncul sebagai ekspresi git yang

@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav th:replace="fragments/fragment :: navbar('Penyelenggara')"></nav>
-<div class="container">
+<div th:if="${user.getRole().getRole() == 'Manajer'}" class="container">
   <div class="card m-4 p-4">
     <div class="card-body">
       <div class="justify-content-center">
@@ -32,6 +32,18 @@
           <button class="btn btn-primary" type="submit">Submit</button>
           <a class="btn btn-primary" href="/">Home</a>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div th:unless="${user.getRole().getRole() == 'Manajer'}" class="container">
+  <div class="card m-4 p-4">
+    <div class="card-body">
+      <div class="justify-content-center">
+        <h2>Tidak dapat menambahkan penyelenggara.</h2>
+        <h2>Halaman ini khusus Manajer</h2>
+        <br>
+        <a class="btn btn-primary" href="/penyelenggara/viewall">Kembali</a>
       </div>
     </div>
   </div>
