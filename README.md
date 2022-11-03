@@ -5,6 +5,53 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 6
+**Pertanyaan 1: Perhatikan apa yang terjadi pada file index.html pada branch feat/tutorial-6-advancedgit-1. 
+Apa yang terjadi setelah git cherry-pick dilakukan? Apakah kita bisa melakukan cherrypick tanpa harus melakukan commit?**
+> File index.html pada branch feat/tutorial-6-advancedgit-1 yang tadinya kosong sekarang terisi setelah dilakukan ```git
+> cherry-pick```, hal ini dapat terjadi karena ```git cherry-pick``` memungkinkan kita untuk mengambil kode dari branch lain. Pada
+> contoh ini, yang diambil merupakan baris kode dari branch tut-for-cherrypick ke feat/tutorial-6-advancedgit-1. Selain itu,
+> kita juga dapat melakukan cherrypick tanpa melakukan commit dengan menambahkan ```-n```.
+> ```git cherry-pick -n <commit-id>```.
+
+**Pertanyaan 2: Conflict terjadi karena ...**
+> Konflik terjadi karena terdapat perbedaan pada baris 6 file index.html. Konflik muncul sebagai ekspresi git yang
+> tidak tahu harus menggunakan kode yang mana (karena berbeda antara satu dan yang lain). Maka, kita diminta untuk 
+> me-resolve konflik ini dengan mengedit file yang berkaitan, dalam hal ini file index.html. Setelah itu, kita perlu 
+> melakukan ```git add``` dan ```git merge --continue```.
+
+**Pertanyaan 3: Apa yang terjadi pada log history setelah melakukan rebase (branch rebase-1 dan rebase-2)? 
+Sertakan screenshot log history anda pada kedua branch tersebut!**
+![img_3.png](img_3.png)
+----
+![img_2.png](img_2.png)
+> Pada foto di atas dapat dilihat bahwa pada rebase-2 terdapat log history rebase-1. Hal ini dapat terjadi karena ```git rebase```
+> memungkinkan kita untuk menambahkan log history dari satu branch ke branch lainnya.
+
+
+**Pertanyaan 4: Jelaskan perbedaan dari "rebase –continue", "rebase –skip", dan "rebase –abort"!**
+> - ```rebase -continue``` berfungsi untuk melanjutkan rebase setelah resolve conflict.
+> - ```rebase -skip``` berfungsi untuk mengabaikan konflik yang terjadi/muncul.
+> - ```rebase -abort``` berfungsi untuk membatalkan rebase.
+
+**Pertanyaan 5: Jelaskan perbedaan git rebase dan git merge!**
+> ```git merge``` dan ```git rebase``` memiliki fungsi yang sama yaitu untuk memberikan perubahan pada branch tertentu. Namun, terdapat
+> perbedaan dari keduanya. Git merge melakukan penambahan commit/history, sedangkan git rebase melakukan replacing 
+> commit/history. 
+> - Karakteristik Merge: mempertahankan history repo, mudah diperbaiki jika ada konflik
+> - Karakteristik Rebase: membuat history repo menjadi lebih bersih, memudahkan kita untuk membaca grafik commit 
+
+**Pertanyaan 6: Pada tahap ini apakah yang terjadi pada direktori git-stash?**
+> Pada saat dilakukan ```git stash```, direktori git-stash akan terhapus. Kita dapat memindahkan direktori git-stash
+> dengan melakukan ```git stahs pop``` pada branch yang diinginkan.
+
+**Pertanyaan 7: Apa yang terjadi pada file abc.txt setelah melakukan git reset --hard? Bagaimana kondisi lognya? 
+Apa perbedaan git reset dengan git revert?**
+> Isi file abc.txt yang tadinya berisi 2 baris, kembali menjadi 1 baris karena ```git reset``` yang mengembalikan file
+> abc.txt ke commit "update abc file", yang awalnya "update abc file 2". ```git reset``` sendiri berfungsi untuk mengembalikan
+> state dari titik commit tertentu, sedangkan ```git revert``` berfungsi untuk membuat commit baru yang dapat meng-undo
+> perubahan karena commit.
+
 ## Tutorial 5
 **Pertanyaan 1: Apa itu Postman? Apa kegunaannya?**
 > **_Postman_** merupakan aplikasi komputer yang digunakan untuk melakukan pengujian API. Aplikasi ini relatif mudah digunakan
