@@ -14,7 +14,7 @@
       <h2>Daftar Seluruh Penyelanggara</h2>
       <br>
       <div class="col">
-        <a class="btn btn-primary" th:href="@{/penyelenggara/add}">Tambah Penyelenggara</a>
+        <a th:if="${user.getRole().getRole() == 'Manajer'}" class="btn btn-primary" th:href="@{/penyelenggara/add}">Tambah Penyelenggara</a>
         <a class="btn btn-primary" th:href="@{/}">Beranda</a>
       </div>
       <br>
