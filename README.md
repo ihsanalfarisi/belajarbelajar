@@ -5,6 +5,75 @@
 * **Muhammad Ihsan Al Farisi** - *2006596693* - *APAP-B*
 
 ---
+## Tutorial 8
+**Pertanyaan 1: Apa itu Dockerfile dan docker-compose.yml? Apa fungsinya?**
+> - Dockerfile merupakan file yang berisi kumpulan perintah yang bisa dijalankan untuk membuat image. Perintah tersebut
+> mencakup keseluruhan instruksi yang dibutuhkan docker dalam membuat image.
+> - docker-compose.yml merupakan file yang berfungsi untuk mengonfigurasi layanan aplikasi pada saat menjalankan
+> docker-compose.
+> 
+
+**Pertanyaan 2: Screenshot hasil perubahan anda. Setelah anda menyelesaikan tutorial ini, menurut anda, mengapa kita 
+perlu mengganti port?**
+> ![img_6.png](img_6.png) <br />
+> Perubahan dilakukan pada port external menjadi 10000 + 172 (urutan saya), yang artinya saya mendefinisikan port 10172
+> sebagai host yang dapat digunakan untuk mengakses aplikasi. Menurut saya, kita mengganti port tersebut agar masing-masing
+> mahasiswa memiliki port yang berbeda.
+>
+
+**Pertanyaan 3: Mengapa terdapat versi dev dan prod? File apa yang menentukan konfigurasi mana yang dipakai? Apa yang 
+harus dilakukan untuk menjalankan versi prod? (hint: baca file pada langkah 3 dengan teliti)**
+> Versi dev digunakan untuk pada stage development dan prod digunakan pada stage production. File yang mengonfigurasi
+> mana yang dipakai adalah app.env pada baris pertama yaitu "SPRING_PROFILES_ACTIVE={nama versi}". Pada tutorial ini, 
+> yang digunakan adalah veri prod, sehingga pada app.env tertulis "SPRING_PROFILES_ACTIVE=prod".
+> 
+
+**Pertanyaan 4: Apa saja yang terjadi di langkah ini?**
+> Pada tahap ini dilakukan running pada image yang telah dibuild pada tahap-tahap sebelumnya. Pertama dilakukan pulling 
+> pada db, inisiasi file-file, dan starting application.
+>  
+
+**Pertanyaan 5: Sertakan screenshot container yang sedang berjalan (versi gui atau cli, pilih salah satu). Apa itu 
+docker container, images, dan volume?**
+>![img_7.png](img_7.png)
+> - Docker Container merupakan tempat penampung dan pengemas aplikasi untuk dijalankan.
+> - Images merupakan kumpulan file yang berisi informasi suatu aplikasi.
+> - Volume digunakan sebagai penyimpanan agar pada saat Container dihapus, data tidak ikut dihapus.
+
+**Pertanyaan 6: Apa perbedaan docker-compose down dan stop?**
+> - down digunakan untuk menghentikan serta menghapus (remove) kontainer dan networks yang telah dibuat.
+> - stop hanya digunakan untuk menghentikan servis/aplikasi tanpa remove kontainer.
+> 
+
+**Pertanyaan 7: Sertakan screenshot mengakses laman kirti milik anda melalui browser (seperti screenshot di atas)**
+>![img_8.png](img_8.png)
+> 
+
+**Pertanyaan 8: Ceritakan pengalaman anda melakukan deployment ke Kirti. Kendala apa yang anda alami?**
+> Beberapa hal yang saya alami pada saat melakukan deployment yaitu proses buid yang sangat lama di awal. Bahkan, sampai
+> error dan harus diulang lagi. Kemudian, ketika server kirti yang penuh, sehingga saya perlu menunggu mahasiswa lain
+> melakukan docker-compose down, baru saya lanjutkan proses deployment.
+>
+**Pertanyaan 9: Buka container docker Anda, lalu screenshot. Apa perbedaan tampilan container sekarang dengan tampilan 
+container pada langkah tutorial docker di awal tadi?**
+>![img_11.png](img_11.png)
+> Terdapat container yang tidak ada pada tahap awal yaitu web2-1. Hal tersebut dapat terjadi karena saya menambahkan web2
+> pada docker-compose.yml
+
+**Pertanyaan 10: Sertakan screenshot tampilan web ketika pertama kali menjalankan localhost:9090 dan tampilan web ketika
+halaman di-refresh.**
+> - **Port:8080**
+>![img_9.png](img_9.png)
+> - **Port:2020**
+>![img_10.png](img_10.png)
+
+**Pertanyaan 11: Kendala apa yang anda hadapi ketika melakukan tutorial bagian nginx?**
+> Kendala yang saya alami adalah ketika saat saya mengakses localhost:9090, tampilan yang muncul bukan website belajarbelajar,
+> melainkan "Welcome to nginx". Setelah ditelusuri ternyata aplikasi nginx yang berjalan pada background tidak hanya satu.
+> Jadi saya perlu melakukan "end task" pada seluruh aplikasi nginx yang berjalan di background pada Task Manager, kemudian
+> baru saya jalankan kembali.
+> 
+
 ## Tutorial 7
 **Pertanyaan 1: Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda 
 buat) konsep tersebut diimplementasi?**

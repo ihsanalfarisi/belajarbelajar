@@ -7,6 +7,7 @@ import apap.tutorial.belajarbelajar.service.RoleService;
 import apap.tutorial.belajarbelajar.service.UserService;
 import apap.tutorial.belajarbelajar.setting.Setting;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -34,6 +35,11 @@ public class PageController {
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    ServerProperties serverProperties;
+
+    private WebClient webClient = WebClient.builder().build();
+
     @RequestMapping("/")
     public String home(Model model){
         List<UserModel> listUser = userService.getListUser();
@@ -49,11 +55,10 @@ public class PageController {
     }
 
     @RequestMapping("/login")
-    public String login(){
+    public String login(Model model) {
+        model.addAttribute("port", serverProperties.getPort());
         return "login";
     }
-
-    private WebClient webClient = WebClient.builder().build();
 
     @GetMapping("/validate-ticket")
     public ModelAndView adminLoginSSO(
